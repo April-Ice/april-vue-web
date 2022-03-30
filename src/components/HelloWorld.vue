@@ -14,16 +14,24 @@
             :key="item.key"
             @click="show(item.key)"
           >
-            <span> {{ item.name }} </span>
+            <template #icon>
+              <dashboard-outlined
+                :style="{ fontSize: '18px', color: '#ff0' }"
+              />
+            </template>
+             {{ item.name }}
           </a-menu-item>
         </a-menu>
       </a-layout-sider>
       <!-- 内容 -->
       <a-layout>
-        <a-layout-header style="background: #fff;padding-top:1em">
-          <a-typography-title :level="4">Hello</a-typography-title>
-        </a-layout-header>
-        <a-layout-content style="margin: 0 16px">
+        <a-page-header
+          style="border: 1px solid rgb(235, 237, 240); padding-top: 1em"
+          title="Hello"
+          sub-title=""
+          @back="goback()"
+        />
+        <a-layout-content>
           <div class="contentBox">
             <router-view></router-view>
           </div>
@@ -35,8 +43,9 @@
 
 <script>
 import { defineComponent } from "vue";
-import { AntDesignOutlined } from "@ant-design/icons-vue";
-import MenuList from "../router/menu.js"
+import { AntDesignOutlined, DashboardOutlined } from "@ant-design/icons-vue";
+import MenuList from "../router/menu.js";
+import "./common.less";
 
 export default defineComponent({
   name: "HelloWorld",
@@ -45,20 +54,23 @@ export default defineComponent({
   },
   components: {
     AntDesignOutlined,
+    DashboardOutlined,
   },
-  computed:{
-    menuList(){
-      return  MenuList
-    }
+  computed: {
+    menuList() {
+      return MenuList;
+    },
   },
+
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     show(index) {
-      console.log("--show---", index);
       this.$router.push(`/${index}`);
+    },
+    goback() {
+      this.$router.go(-1);
     },
   },
 });
@@ -72,7 +84,24 @@ export default defineComponent({
   background: #002140;
   margin-bottom: 1em;
 }
-.contentBox{
-  padding: 1em;
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: #eee;
+  border-radius: 10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(190, 190, 190);
+  -webkit-box-shadow: #eee;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgb(198, 222, 228);
 }
 </style>
