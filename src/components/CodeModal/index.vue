@@ -13,11 +13,17 @@
   </a-modal>
 </template>
 
+
 <script >
 import { defineComponent } from "vue";
 
+import 'highlight.js/lib/common';
+import hljsVuePlugin from "@highlightjs/vue-plugin";
+
 export default defineComponent({
-  components: {},
+  components: {
+    highlightjs: hljsVuePlugin.component
+  },
   data() {
     return {
       visible: false,

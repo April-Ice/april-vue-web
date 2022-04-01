@@ -33,7 +33,7 @@
         />
         <a-layout-content>
           <div class="contentBox">
-            <router-view></router-view>
+            <router-view/>
           </div>
         </a-layout-content>
       </a-layout>
@@ -48,7 +48,7 @@ import MenuList from "../router/menu.js";
 import "./common.less";
 
 export default defineComponent({
-  name: "HelloWorld",
+  name: "BasicLayout",
   props: {
     msg: String,
   },
@@ -67,6 +67,7 @@ export default defineComponent({
   },
   methods: {
     show(index) {
+      console.log('-- process.env.NODE_ENV--', process.env.NODE_ENV)
       this.$router.push(`/${index}`);
     },
     goback() {

@@ -9,7 +9,7 @@
         show-icon
       />
     </div>
-    <a-row :gutter="16">
+    <a-row :gutter="30">
       <a-col :span="7" class="textbox" @click="showCode(codeObj.code1)">
         <div class="text11">1.1 文字效果 text-shadow</div>
       </a-col>

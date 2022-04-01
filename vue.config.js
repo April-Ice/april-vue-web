@@ -1,21 +1,7 @@
 // vue.config.js for less-loader@6.0.0
-// const path = require("path");
 
 module.exports = {
-  // pluginOptions: {
-  //   "style-resources-loader": {
-  //     preProcessor: "less",
-  //     patterns: [path.resolve(__dirname, "./view/commonCss/boxShadow/index.less")]
-  //   }
-  // },
-  // lintOnSave: true,
-  devServer: {
-    open: true,
-    overlay: {
-      warnings: true,
-      error: true
-    }
-  },
+  publicPath: process.env.NODE_ENV === 'production'?'./':'/',  // 可以设置成相对路径，这样所有的资源都会被链接为相对路径，打出来的包可以被部署在任意路径
   css: {
     loaderOptions: {
       less: {
@@ -28,6 +14,13 @@ module.exports = {
           javascriptEnabled: true,
         },
       },
+    },
+  },
+  devServer: {
+    open: true,
+    overlay: {
+      warnings: true,
+      error: true
     },
   },
 };

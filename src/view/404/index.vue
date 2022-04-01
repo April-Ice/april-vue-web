@@ -1,6 +1,11 @@
 <template>
   <div>
-     <router-view></router-view>
+    <a-alert
+        message="404"
+        type="info"
+        banner
+        show-icon
+      />
   </div>
 </template>
 
@@ -10,6 +15,7 @@ export default defineComponent({
   components: {
   },
   computed: {
+  
   },
   data() {
     return {};

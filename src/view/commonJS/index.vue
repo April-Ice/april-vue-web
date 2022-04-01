@@ -1,4 +1,4 @@
 
 <template>
-    <div>JS</div>
+    <div> ---JS---- </div>
 </template>
