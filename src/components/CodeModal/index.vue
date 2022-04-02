@@ -8,6 +8,8 @@
     <template #footer>
       <a-button key="back" @click="handleOk">确定</a-button>
     </template>
+    <!-- <div ><pre v-highlight><code>{{codeInfo}}</code></pre></div> -->
+
     <!-- 高亮代码 -->
     <highlightjs autodetect :code="codeInfo" />
   </a-modal>
@@ -16,13 +18,10 @@
 
 <script >
 import { defineComponent } from "vue";
-
-import 'highlight.js/lib/common';
-import hljsVuePlugin from "@highlightjs/vue-plugin";
+import "./tomorrow-night-bright.css";
 
 export default defineComponent({
   components: {
-    highlightjs: hljsVuePlugin.component
   },
   data() {
     return {
