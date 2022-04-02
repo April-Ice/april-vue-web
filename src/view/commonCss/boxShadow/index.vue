@@ -5,10 +5,10 @@
     </div>
 
     <a-row :gutter="30">
-      <a-col :span="5" @click="showCode(codeObj.cornerBox)">
+      <a-col :span="5" :xs="12" @click="showCode(codeObj.cornerBox)">
           <div class="cornerBox"></div>
       </a-col>
-      <a-col :span="5" @click="showCode(codeObj.translucentBox)">
+      <a-col :span="5" :xs="12" @click="showCode(codeObj.translucentBox)">
         <div class="translucentBox"></div>
       </a-col>
     </a-row>

@@ -1,6 +1,18 @@
 <template>
   <div class="hello">
-    <a-layout style="min-height: 100vh">
+    <!-- 移动端 -->
+    <div v-if="isMobile">
+      <a-page-header
+        style="border: 1px solid rgb(235, 237, 240); padding-top: 1em"
+        title="Hello"
+        sub-title=""
+        @back="goback()"
+      />
+      <router-view />
+    </div>
+
+    <!-- web端 -->
+    <a-layout v-else style="min-height: 100vh">
       <!-- 侧边菜单 -->
       <a-layout-sider v-model:collapsed="collapsed" collapsible>
         <div class="menuLogo">
@@ -19,7 +31,7 @@
                 :style="{ fontSize: '18px', color: '#ff0' }"
               />
             </template>
-             {{ item.name }}
+            {{ item.name }}
           </a-menu-item>
         </a-menu>
       </a-layout-sider>
@@ -33,7 +45,7 @@
         />
         <a-layout-content>
           <div class="contentBox">
-            <router-view/>
+            <router-view />
           </div>
         </a-layout-content>
       </a-layout>
@@ -57,6 +69,13 @@ export default defineComponent({
     DashboardOutlined,
   },
   computed: {
+    isMobile() {
+      let flag = navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+      );
+      return flag;
+    },
+
     menuList() {
       return MenuList;
     },
@@ -67,7 +86,7 @@ export default defineComponent({
   },
   methods: {
     show(index) {
-      console.log('-- process.env.NODE_ENV--', process.env.NODE_ENV)
+      console.log("-- process.env.NODE_ENV--", process.env.NODE_ENV);
       this.$router.push(`/${index}`);
     },
     goback() {

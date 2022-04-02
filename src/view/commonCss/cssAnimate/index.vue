@@ -11,6 +11,7 @@
     <a-row :gutter="16">
       <a-col
         :span="4"
+        :xs="12"
         class="itemBox"
         v-for="(item, index) in animateList"
         :key="index"

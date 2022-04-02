@@ -4,6 +4,10 @@ const routes = [
         hidden: true,
         component: () => import('@/layout/BasicLayout'),
         children: [
+            {
+                path: '',
+                component: () => import('@/view/welcome/')
+            },
             // commonCss
             {
                 name: 'commonCss',
@@ -44,7 +48,7 @@ const routes = [
         ]
     },
     // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
-    { path: '/:pathMatch(.*)', component: () => import('@/layout/BasicLayout') }
+    // { path: '/:pathMatch(.*)', component: () => import('@/layout/BasicLayout') }
 ];
 
 export default routes
