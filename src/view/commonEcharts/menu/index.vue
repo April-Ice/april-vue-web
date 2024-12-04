@@ -4,12 +4,6 @@
       <a-row :gutter="[16, 16]">
         <a-col :sm="6" :xs="24" v-for="(item, index) in cardList" :key="index">
           <a-card hoverable @click="gotoCardDetail(item)">
-            <!-- <template #cover>
-              <img
-                alt="txtCard"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-            </template> -->
             <a-card-meta :title="item.title" :description="item.info">
               <template #avatar>
                 <a-avatar style="background-color: #20bdb5">
@@ -33,37 +27,21 @@ export default defineComponent({
   },
   computed: {
     cardList() {
+      console.log('--echarts--cardList--')
       return [
         {
-          page: "commonCss/txtShadow",
-          title: "文字效果",
-          info: "文字阴影、扫光效果等集合",
-        },
-        {
-          page: "commonCss/boxShadow",
-          title: "边框效果",
-          info: "boxshadow效果集合",
-        },
-        {
-          page: "commonCss/cssAnimate",
-          title: "CSS3动画",
-          info: "简单动画效果集合",
-        },
-        // {
-        //   page: "commonCss/cssComponent",
-        //   title: "CSS3组件",
-        //   info: "纯css组件集合",
-        // },
-        {
-          page: "commonCss/backgroud",
-          title: "背景色",
-          info: "半色等",
+          page: "commonEcharts/outlierFixRedDot",
+          title: "outlierFixRedDot",
+          info: "树组件操作",
         },
       ];
     },
   },
   data() {
     return {};
+  },
+  mounted(){
+    console.log('---BBBB----')
   },
   methods: {
     gotoCardDetail(item) {

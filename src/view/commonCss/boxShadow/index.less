@@ -1,11 +1,14 @@
+.box{
+    height: 20vh;
+}
+
 @borderWidth: 3px;
 @boxWidth: 90%;
-@boxHeight: 100px;
+@boxHeight: 20vh;
 @borderCorner: 20px;
 @borderColor: #74e448;
 
 .cornerBox {
-    background: #f5f7f4;
     border: @borderWidth solid rgb(10, 10, 10);
     width: @boxWidth;
     height: @boxHeight;
@@ -40,7 +43,6 @@
 
 .translucentBox {
     box-sizing: border-box;
-    height: 100px;
     line-height: 100px;
 
     background: rgb(84, 182, 212);
@@ -48,3 +50,17 @@
     border: 10px dashed rgba(21, 204, 61, 0.5);
     line-height: 80px;
   }
+
+
+
+  .radiusCorner {
+    filter: drop-shadow(0 0 3px #666);
+    background-size: 70% 70%;
+    background-image: 
+        radial-gradient(circle at 100% 100%, transparent 0, transparent 2vw, #03A9F5 2vw),
+        radial-gradient(circle at 0 0, transparent 0, transparent 2vw, #03A9F5 2vw),
+        radial-gradient(circle at 100% 0, transparent 0, transparent 2vw, #03A9F5 2vw),
+        radial-gradient(circle at 0 100%, transparent 0, transparent 2vw, #03A9F5 2vw);
+    background-repeat: no-repeat;
+    background-position: right bottom, left top, right top, left bottom;
+}

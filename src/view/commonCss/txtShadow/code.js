@@ -99,13 +99,35 @@ let zebraText = `
   }
 }`
 
+const code8 = `
+.moveText {
+    background-image: linear-gradient(90deg, #f66, #f90);
+    background-clip: text;
+    color: transparent;
+    animation: hue 5s linear infinite;
+    font-weight: bold;
+}
+
+@keyframes hue {
+    from {
+        filter: hue-rotate(0);
+    }
+
+    to {
+        filter: hue-rotate(-1turn);
+    }
+}
+`
+
 export default {
-  "code1": code1,
-  "code2": code2,
-  "code3": code3,
-  "code4": code4,
-  "code5": code5,
-  "code6": code6,
-  "clipText": clipText,
-  "zebraText": zebraText,
+    "code1": code1,
+    "code2": code2,
+    "code3": code3,
+    "code4": code4,
+    "code5": code5,
+    "code6": code6,
+    "clipText": clipText,
+    "zebraText": zebraText,
+    "code8": code8,
+
 };

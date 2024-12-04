@@ -1,18 +1,25 @@
 <template>
   <div class="co-basicBox">
-    <div class="co-tipInfo">
-      <a-alert message="点击显示代码" type="info" banner show-icon />
-    </div>
-
-    <a-row :gutter="30">
-      <a-col :sm="6" :xs="12" @click="showCode(codeObj.cornerBox)">
-        <div class="box cornerBox"></div>
-      </a-col>
-      <a-col :sm="6" :xs="12" @click="showCode(codeObj.translucentBox)">
-        <div class="box translucentBox"></div>
-      </a-col>
-      <a-col :sm="6" :xs="12" @click="showCode(codeObj.code3)">
-        <div class="box radiusCorner"></div>
+    <a-row :gutter="16">
+      <a-col
+        :span="8"
+        :xs="24"
+        class="itemBox"
+        @click="showCode(codeObj['tabBox'])"
+      >
+        <div class="tabBox">
+          <ul class="tabs">
+            <li>
+              <span>CodePen - A Pen by Adem ilter</span>
+            </li>
+            <li class="active">
+              <span>Adem ilter - Master of Pixels</span>
+            </li>
+            <li>
+              <span>Dribbble - Adem ilter</span>
+            </li>
+          </ul>
+        </div>
       </a-col>
     </a-row>
     <!-- 代码弹窗 -->
@@ -43,6 +50,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="less">
-</style>

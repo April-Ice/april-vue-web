@@ -10,29 +10,33 @@
       />
     </div>
     <a-row :gutter="30">
-      <a-col :span="6" :xs="24" class="textbox" @click="showCode(codeObj.code1)">
-        <div class="text11">1.1 文字效果 text-shadow</div>
+      <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.code1)">
+        <div class="text11">1 文字效果 text-shadow</div>
       </a-col>
-      <a-col :span="6" :xs="24" class="textbox" @click="showCode(codeObj.code2)">
-        <div class="text12">1.2 文字效果 text-shadow 模糊</div>
+      <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.code2)">
+        <div class="text12">2 文字效果 text-shadow 模糊</div>
       </a-col>
-      <a-col :span="6" :xs="24" class="textbox" @click="showCode(codeObj.code3)">
-        <div class="text13">1.3 文字效果 text-shadow 阴影</div>
+      <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.code3)">
+        <div class="text13">3 文字效果 text-shadow 阴影</div>
       </a-col>
-      <a-col :span="6" :xs="24" class="textbox" @click="showCode(codeObj.code4)">
-        <div class="text21">2.1 内阴影 text-shadow</div>
+      <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.code4)">
+        <div class="text21">4 内阴影 text-shadow</div>
       </a-col>
-      <a-col :span="6" :xs="24" class="textbox" @click="showCode(codeObj.code5)">
+      <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.code5)">
         <div class="text31">
-          <p>3.1 文字扫光效果-webkit</p>
+          <p>5 文字扫光效果-webkit</p>
         </div>
       </a-col>
-      <a-col :span="6" :xs="24" class="textbox" @click="showCode(codeObj.clipText)">
-        <div class="clipText">5.1文字镂空</div>
+      <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.clipText)">
+        <div class="clipText">6 文字镂空 ABC</div>
       </a-col>
-      <a-col :span="6" :xs="24" class="textbox" @click="showCode(codeObj.zebraText)">
-        <div class="zebraText">5.2 斑马线</div>
+      <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.zebraText)">
+        <div class="zebraText">7 斑马线</div>
       </a-col>
+       <a-col :sm="12" :xs="24" class="textbox" @click="showCode(codeObj.code8)">
+        <div class="moveText">8 动态变色 Change Color</div>
+      </a-col>
+         
     </a-row>
     <!-- 代码弹窗 -->
     <code-modal ref="code"></code-modal>
@@ -43,6 +47,7 @@
 import { defineComponent } from "vue";
 import CodeModal from "../../../components/CodeModal";
 import codeObj from "./code.js";
+import "./index.less";
 
 export default defineComponent({
   components: {
@@ -66,7 +71,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import "./index.less";
 .co-basicBox{
   /* background: rgb(45, 39, 59); */
 }

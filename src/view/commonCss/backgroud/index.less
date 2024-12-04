@@ -1,0 +1,42 @@
+.bgBox {
+    width: 80%;
+    margin: 0 auto;
+    height: 20vh;
+    text-align: center;
+    padding-top: 2em;
+    color: #444;
+    &:hover{
+        box-shadow: 1px 4px 10px #616060;
+    }
+}
+
+.halfBg {
+    background: linear-gradient(to bottom, #ff0 0%, #ff0 50%, #000 50.01%, #000 100%)
+}
+
+.moveBg {
+    color: #fff;
+    height: 100%;
+    background: linear-gradient(135deg, #f66, #f90, #3c9, #09f, #66f) left center/400% 400%;
+    animation: move 10s infinite;
+}
+
+@keyframes move {
+    0%,
+    100% {
+        background-position-x: left;
+    }
+    50% {
+        background-position-x: right;
+    }
+}
+
+
+.stripeBg{
+    background: repeating-linear-gradient(-45deg,#00aaa6,#00aaa6 10px,#52d0cd 0,#52d0cd 20px);
+}
+.barBox{
+    height: 30px;
+    border-radius: 12px;
+    max-width:  20px 10px;
+}

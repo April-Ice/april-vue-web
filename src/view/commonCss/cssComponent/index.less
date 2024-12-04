@@ -1,0 +1,66 @@
+/* tabs */
+
+.tabs {
+    height: 40px;
+}
+
+.tabs li,
+.tabs li:before {
+    padding: 0 15px;
+    width: 160px;
+    border: 1px solid #aaa;
+    margin: 10px 0 0 12px;
+    height: 29px;
+    border-bottom: 0;
+    float: left;
+
+    position: relative;
+    transform: skewX(25deg);
+    border-radius: 5px 5px 0 0;
+    // box-shadow: inset -1px 1px 0 rgba(255, 255, 255, .5);
+    background: #ddd;
+}
+
+
+.tabs li:before {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: -1px;
+    transform: skewX(140deg);
+    border-right: 0;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    border-radius: 5px 0 0 0;
+    // box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .5);
+}
+
+.tabs li span {
+    display: block;
+    width: 98%;
+    line-height: 30px;
+    transform: skewX(-25deg);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.tabs li:nth-child(1) {
+    z-index: 3
+}
+
+.tabs li:nth-child(2) {
+    z-index: 2
+}
+
+.tabs li:nth-child(3) {
+    z-index: 1
+}
+
+.tabs li.active,
+.tabs li.active:before {
+    z-index: 5 !important;
+    background: #eee;
+}
+

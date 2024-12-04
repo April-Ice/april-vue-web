@@ -1,6 +1,9 @@
 const MenuList = [
-    { name: "常用样式", key: "commonCss" },
-    { name: "常用JS", key: "commonJS" },
+    { name: "css", key: "commonCss" },
+    { name: "Echarts", key: "commonEcharts" },
+    // { name: "常用部署", key: "commonA" },
+    { name: "JS", key: "commonJS" },
+    { name: "com", key: "commonCom" },
 ]
 
 export default MenuList

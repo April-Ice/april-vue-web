@@ -15,7 +15,7 @@
     <a-layout v-else style="min-height: 100vh">
       <!-- 侧边菜单 -->
       <a-layout-sider v-model:collapsed="collapsed" collapsible>
-        <div class="menuLogo">
+        <div class="menuLogo" @click="show()">
           <a-avatar :size="50" style="background-color: #20bdb5">
             <template #icon> <AntDesignOutlined /></template>
           </a-avatar>
@@ -28,7 +28,7 @@
           >
             <template #icon>
               <dashboard-outlined
-                :style="{ fontSize: '18px', color: '#ff0' }"
+                :style="{ fontSize: '18px', color: '#20bdb5' }"
               />
             </template>
             {{ item.name }}
@@ -85,8 +85,8 @@ export default defineComponent({
     return {};
   },
   methods: {
-    show(index) {
-      console.log("-- process.env.NODE_ENV--", process.env.NODE_ENV);
+    show(index="") {
+      console.log("-- process.env.NODE_ENV--", index);
       this.$router.push(`/${index}`);
     },
     goback() {

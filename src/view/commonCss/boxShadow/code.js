@@ -64,6 +64,19 @@ let codeObj = {
         line-height: 80px;
       }
     `,
+    code3: `
+    .radiusCorner {
+        filter: drop-shadow(0 0 3px #666);
+        background-size: 70% 70%;
+        background-image: 
+            radial-gradient(circle at 100% 100%, transparent 0, transparent 2vw, #03A9F5 2vw),
+            radial-gradient(circle at 0 0, transparent 0, transparent 2vw, #03A9F5 2vw),
+            radial-gradient(circle at 100% 0, transparent 0, transparent 2vw, #03A9F5 2vw),
+            radial-gradient(circle at 0 100%, transparent 0, transparent 2vw, #03A9F5 2vw);
+        background-repeat: no-repeat;
+        background-position: right bottom, left top, right top, left bottom;
+    }
+    `,
 };
 
 export default codeObj
