@@ -171,7 +171,7 @@ export default defineComponent({
 
 .listBox {
   margin-bottom: 16px;
-  adding-bottom: 16px;
+  padding-bottom: 16px;
 
   .titleLine {
     display: flex;
